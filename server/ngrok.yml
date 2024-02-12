@@ -1,0 +1,9 @@
+version: 2
+authtoken: 2WDMOSd6MQRTtPaVpACuj28Z6sH_4Q2xPNoL2CqrGiv7ti3Hh
+tunnels:
+  first:
+    proto: tcp
+    addr: 8081
+  second:
+    proto: tcp
+    addr: 8082

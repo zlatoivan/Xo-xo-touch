@@ -1,0 +1,187 @@
+package Xo_xo_touch
+
+curl -X GET http://localhost:8088/ -d '{"userId": 123456}'
+
+ngrok tcp 8081
+
+    Запустить два соединения (https://dev.to/ethand91/using-ngrok-to-set-up-multiple-ports-2911):
+ngrok start --config ngrok.yml --all
+
+    free port:
+sudo lsof -i :8081
+kill -9 ...   (... = PID)
+
+
+
+nc 4.tcp.eu.ngrok.io 16643 (not bc)
+nc 0.tcp.eu.ngrok.io 14040 (bc)
+
+nc 5.tcp.eu.ngrok.io 13099 (not bc)
+nc 5.tcp.eu.ngrok.io 12779 (bc)
+
+0.tcp.eu.ngrok.io:15986 -> localhost:8081
+5.tcp.eu.ngrok.io:13970 -> localhost:8082
+
+0.tcp.eu.ngrok.io:15980 -> localhost:8082 (bc)
+7.tcp.eu.ngrok.io:19484 -> localhost:8081 (not bc)
+
+4.tcp.eu.ngrok.io:18719 -> localhost:8084 (bc)
+5.tcp.eu.ngrok.io:18922 -> localhost:8083 (not bc)
+
+request: 5.tcp.eu.ngrok.io  14633
+broadcast: 6.tcp.eu.ngrok.io  10725
+
+5.tcp.eu.ngrok.io:16103 -> localhost:8083 (req)
+7.tcp.eu.ngrok.io:18307 -> localhost:8084 (brcast)
+
+nc 5.tcp.eu.ngrok.io 16103 (not bc)
+nc 7.tcp.eu.ngrok.io 18307 (bc)
+
+
+
+    Вопросы Юре:
+
+!!!) Раунды!
+
+!!!) Таймер!
+
+) Сдеалть переменную "Игра наполнена"
+
+) СТАВИТЬ МЮТЕКСЫ НА КАЖДОЕ ПОЛЕ Memory. Класс, в кот. будут get, add, set.
+    И у каждого класса будет метод, в каждом их которых будет захват мьютекса.
+    (Мьютекс нужен, когда есть структура в памяти, которая движется между потоками)
+    У меня это весь Memory. Потом это будет бд. Там будет меньше мьютексов.
+    Будет: юзеры в бд. Игра и сессии - в реддисе (легковесная бд) вместо мьютексов.
+    А если не там должно храниться, то делать как Юра сделал в reddit/pkg/posts/posts_repo.go
+
+) Не начинать новое голосование, пока старое не обработано
+
+) Если предыдущего шага не было, то ошибка!!!!!!!!!!!!!!!!!!!!!!
+
+) Чем int64 лучше int?
+
+) Сделать таймер ответов на вопросы.
+    Если он истек, то ответы пустые
+    Пока он не истек, нельзя голосовать.
+
+) Разобраться с lastGame. он вообще нужен?
+
+) Обработать ошибки. Не позволять третий раз посылать ответ на игровой вопрос.
+    Посылать ошибку.
+
+) Если соединение потеряно, но есть верный токен, то создать новую сессию в checkToken.
+    Так сделано сейчас. Но в игре ведь тоже надо изменить сессию
+    И, наверное, еще где-то.
+
+) Можно ли прислать в json массив из двух юзернеймов или лучше две переменные (username1 и username2) ?
+
+
+
+    Доделать:
+
+) type ResponseStatus и другие.
+
+) Обязательно ли давать названия полям в json ? Даже если поле ожно или массив один
+) В закрытии коннекшона return или continue?
+
+) Удалять сессию через 60 сек после потери соединения, но слушать другой канал,
+    чтоб отменить удаление, если пользователь все-таки зашел
+
+) Что происходит, когда нажимается кнопка Boop, есть токен и он авторизован, но окно перезагружено
+
+) Когда юзер отключается, надо продлевать сессию
+
+
+) Чем отличаются??? : (работает только первый, возвращает пустой список, а не null)
+var usernamesIn []string
+usernamesIn := []string{}
+usernamesIn := make([]string{}, 0)
+
+) Удалить из игры чуловека, который закрыл приложение. А если он потом вернулся?
+
+) Добавить таймер
+
+) Можно ведь до } считывать
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Request (register): ...
+Request (entergame) xIFeuStNB4: {"status":200,"usernames":[]}
+
+Request (register): ...
+Request (entergame) UbbWG_Ac1g: {"status":200,"usernames":["dovolniy"]}
+
+Broadcast: {"message":"newplayer","username":"Yuriy"}
+
+Request (register): ...
+Request (entergame) WAnCTIxLuQ: {"status":200,"usernames":["dovolniy","Yuriy"]}
+
+Broadcast: {"message":"newplayer","username":"Andrew"}
+
+Request (register): ...
+Request (entergame) nmhohReY_M: {"status":200,"usernames":["dovolniy","Yuriy","Andrew"]}
+
+Broadcast: {"message":"newplayer","username":"user4"}
+
+Request (register): ...
+Request (entergame) M_gBsQAUN0: {"status":200,"usernames":["dovolniy","Yuriy","Andrew","user4"]}
+
+Broadcast: {"message":"newplayer","username":"user5"}
+
+Broadcast: {"message":"gamestarted"}
+
+Request (getquestion) xIFeuStNB4: {"status":200,"question":"question1?"}
+Request (saveanswer) xIFeuStNB4: {"status":200,"lastanswer":false}
+
+
+
+Broadcast: {"message":"newplayer","username":"user5"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

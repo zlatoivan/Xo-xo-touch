@@ -1,0 +1,40 @@
+[
+
+{"method": "register", "username": "dovolniy1", "password": "parol123"}
+{"method": "register", "username": "Yuriy", "password": "parol123"}
+{"method": "register", "username": "Andrew", "password": "parol123"}
+
+{"method": "login", "username": "dovolniy1", "password": "parol123"}
+
+{"method": "entergame", "token": "eyJhbG..."}
+
+{"method": "getguestion", "token": "eyJhbG..."}
+
+{"method": "saveguestion", "token": "eyJhbG..."}
+
+{"method": "getduel", "token": "eyJhbG..."}
+
+{"method": "savevote", "vote": 1, "token": "eyJhbG..."},
+
+{"method": "getduelresult", "token": "eyJhbG..."},
+
+  {"method": "entergame",              "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoiZG92b2xuaXkxIiwiaWQiOiJkNDZiZmI2OS1mZmRjLTQwODQtYTJkYy02ZmRkYmU4ZWY4ODMifX0.P6KimWC7jviHB64iY9OvMTz769T8Gw7UkyYDJR5-HW4"}
+  {"method": "getquestion",           "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoiZG92b2xuaXkxIiwiaWQiOiJkNDZiZmI2OS1mZmRjLTQwODQtYTJkYy02ZmRkYmU4ZWY4ODMifX0.P6KimWC7jviHB64iY9OvMTz769T8Gw7UkyYDJR5-HW4"}
+  {"method": "saveanswer", "answer":"my answer" ,"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoiZG92b2xuaXkxIiwiaWQiOiJkNDZiZmI2OS1mZmRjLTQwODQtYTJkYy02ZmRkYmU4ZWY4ODMifX0.P6KimWC7jviHB64iY9OvMTz769T8Gw7UkyYDJR5-HW4"}
+  {"method": "getduel",               "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoiZG92b2xuaXkxIiwiaWQiOiJkNDZiZmI2OS1mZmRjLTQwODQtYTJkYy02ZmRkYmU4ZWY4ODMifX0.P6KimWC7jviHB64iY9OvMTz769T8Gw7UkyYDJR5-HW4"}
+  {"method": "savevote", "vote": 1, "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoiZG92b2xuaXkxIiwiaWQiOiJkNDZiZmI2OS1mZmRjLTQwODQtYTJkYy02ZmRkYmU4ZWY4ODMifX0.P6KimWC7jviHB64iY9OvMTz769T8Gw7UkyYDJR5-HW4"}
+  {"method": "getduelresult",         "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoiZG92b2xuaXkxIiwiaWQiOiJkNDZiZmI2OS1mZmRjLTQwODQtYTJkYy02ZmRkYmU4ZWY4ODMifX0.P6KimWC7jviHB64iY9OvMTz769T8Gw7UkyYDJR5-HW4"},
+
+
+  {"method": "entergame", "token": ""}
+
+  {"method": "getquestion", "token": ""},
+
+  {"method": "saveanswer", "answer":"my answer" ,"token": ""}
+
+  {"method": "getduel", "token": ""}
+
+  {"method": "savevote", "vote": 1, "token": ""}
+
+  {"method": "getduelresult", "token": ""}
+]
